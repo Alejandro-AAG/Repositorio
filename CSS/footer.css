@@ -1,0 +1,138 @@
+.footer {
+    background-color: #373737;
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    color: white;
+}
+
+.footer_container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.logo_footer {
+    width: 200px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.footer_text {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 900px;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* Alineación a la izquierda para .geeks_chile y .contacto */
+.geeks_chile, .contacto {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.geeks_chile h2, .contacto h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.geeks_chile p, .contacto p {
+    text-align: left; /* Forzamos alineación a la izquierda */
+    color: #ccc;
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+/* Para hacer que el tamaño del texto sea adaptable en pantallas pequeñas */
+@media screen and (max-width: 768px) and (orientation: portrait) {
+    .footer_container {
+        flex-direction: column;
+        align-items: center; /* Cambiamos a 'center' para centrar el logo en X */
+        text-align: left;
+    }
+
+    .footer_text {
+        flex-direction: column;
+        align-items: flex-start; /* Siempre alineado a la izquierda */
+    }
+
+    .logo_footer {
+        margin-bottom: 20px;
+    }
+
+    /* Reducimos el tamaño de letra a 16px en pantallas pequeñas */
+    .geeks_chile p, .contacto p {
+        font-size: 16px;
+    }
+}
+
+/* Estilo de los links EMPRESAS y PROFESIONALES */
+.highlight {
+    color: #00bfa5;
+    text-decoration: none;
+}
+
+.highlight:hover {
+    text-decoration: underline;
+}
+
+/* Media query exclusiva para la landing page en landscape (horizontal) */
+@media screen and (orientation: landscape) {
+    /* Mantener disposición horizontal tipo PC */
+    .footer_container {
+        flex-direction: row; /* Mantiene la estructura en filas como en la PC */
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        text-align: left;
+    }
+
+    .footer_text {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 900px;
+        flex-wrap: nowrap; /* Evitar que se amontonen */
+        gap: 20px;
+    }
+
+    .geeks_chile, .contacto {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .geeks_chile p, .contacto p {
+        font-size: 16px; /* Tamaño adaptado para landscape en celular */
+    }
+
+    /* Ajustamos el logo para que sea escalable y no se vea grande */
+    .logo_footer {
+        width: 15vw;
+        max-width: 150px;
+        height: auto; /* Mantiene la proporción */
+        padding: 5px;
+        align-self: flex-start; /* alinea el logo hacia el inicio (arriba) */
+        margin-right: 20px; /* Añadimos separación entre el logo y la sección geeks_chile */
+        margin-left: 20px;
+    }
+
+    /* Añadimos margen a la sección de Geeks Chile para que se separe del logo */
+    .geeks_chile {
+        margin-left: 20px; /* Espacio entre el logo y los textos */
+    }
+}
+
+
+

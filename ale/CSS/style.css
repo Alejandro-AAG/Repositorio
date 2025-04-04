@@ -1,0 +1,96 @@
+.logo {
+    position: absolute; /* Para posicionar libremente */
+    top: 10px; /* Distancia desde la parte superior */
+    left: 20px; /* Distancia desde la derecha */
+    width: 80px; /* Ajusta el tamaño del logo */
+    height: auto; /* Mantiene la proporción */
+}
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: linear-gradient(to right, #F2F2F2, #A4A4A4);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    background-color: #BEBEBE;
+    padding: 10px 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: rgb(8, 8, 8);
+    text-decoration: none;
+    font-size: 18px;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+p {
+    font-size: 18px;
+}
+
+strong {
+    font-weight: bold;
+}
+
+/* Contenedor principal de burbujas */
+#bubble-container {
+    display: flex;
+    flex-direction: column; /* Para que las filas se apilen verticalmente */
+    gap: 15px; /* Espacio entre filas */
+    overflow: hidden;
+    width: 100%;
+    user-select: none;
+}
+
+/* Animación de desplazamiento derecha a izquierda */
+@keyframes scrollLeft {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* Animación de desplazamiento izquierda a derecha */
+@keyframes scroll-reverse {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+}
+
+/* Lista de burbujas */
+.bubble-list {
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    width: max-content;
+    list-style: none;
+    animation: scrollLeft 20s linear infinite;
+}
+
+/* Alternar dirección de movimiento */
+.bubble-list:nth-child(even) {
+    animation: scroll-reverse 20s linear infinite;
+}
+
+/* Estilos de burbujas */
+.bubble {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    color: #333;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+

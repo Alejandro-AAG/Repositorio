@@ -1,68 +1,139 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geek's Chile - Reclutamiento</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/style.css">
-    
+    <link rel="stylesheet" href="CSS/bar_menu.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap">
+    <link rel="stylesheet" href="CSS/img_descanso.css">
+    <link rel="stylesheet" href="CSS/home.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+
+    <title>Geek's Chile</title>
+    <style>
+        /* Contenedor para el iframe */
+        iframe {
+            width: 100%;
+            height: 100vh;
+            border: none;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <img src="Image/logo Geek's.png" alt="Logo Geek's Chile" class="logo"> 
-        <nav>
-            <ul>
-                <li><a href="#inicio" id="btn-que-hacemos">Qué hacemos</a></li>
-                <li><a href="como_lo_hacemos.html">Cómo lo hacemos</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#empresa">Eres empresa</a></li>
-                <li><a href="#profesional">Eres profesional</a></li>
-                
-            </ul>
-        </nav>
-    </header>
-    <section id="inicio">
-        <h1>Reclutamiento y selección de profesionales en Latinoamérica</h1>
-        <p>Los profesionales que buscas - encuéntralos con nosotros de manera <strong>ÁGIL</strong> y <strong>EFICIENTE</strong></p>
-        <div class="bubble-container" id="bubble-container">
-            <!-- Burbujas generadas dinámicamente en JavaScript -->
-        </div>
-    </section>
 
-    <!-- Scripts cargados al final del body -->
-    <script src="JS/script.js"></script>
-  
-    <section class="como-lo-hacemos">
-        <h2>Contrata profesionales en toda Latinoamérica</h2>
-        <p>Encuentra profesionales que se ajusten a la cultura de tu organización y con las capacidades técnicas y relacionales que necesitas.</p>
-        
-        <div class="pasos">
-            <div class="tarjeta paso" data-info="Identificamos variables claves">
-                <img src="./Image/PASO_1.png" alt="Paso 1">
-                <span>Paso 1</span>
-            </div>
-            <div class="tarjeta paso" data-info="Evaluamos candidatos">
-                <img src="./Image/PASO_2.png" alt="Paso 2">
-                <span>Paso 2</span>
-            </div>
-            <div class="tarjeta paso" data-info="Presentamos candidatos adhoc">
-                <img src="./Image/PASO_3.png" alt="Paso 3">
-                <span>Paso 3</span>
-            </div>
-            <div class="tarjeta paso" data-info="Nuestros clientes evalúan">
-                <img src="./Image/PASO_4.png" alt="Paso 4">
-                <span>Paso 4</span>
-            </div>
-            <div class="tarjeta paso" data-info="Se confirma la contratación">
-                <img src="./Image/PASO_5.png" alt="Paso 5">
-                <span>Paso 5</span>
-            </div>
-        </div>
-        <div class="info-adicional"></div>
-    </section>
-
-
+<!-- ////////////////////////////////////BARRA DE NAVEGACION//////////////////////////////////// -->
+<header class="bar_menu">
+    <a href="#top"><img src="Image/geekschile.png" alt="Logo" class="logo"></a> <!-- Enlace al principio de la página -->
     
+    <!-- Menú hamburguesa para pantallas pequeñas -->
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <span class="close-btn" onclick="closeMenu()">&#10005;</span>
+
+    <!-- Menú de navegación -->
+    <ul>
+        <span class="close-btn" onclick="closeMenu()">&#10005;</span>
+        <li><a href="#">Qué hacemos</a></li>
+        <li><a href="#">Cómo lo hacemos</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#contactos">Eres empresa</a></li>
+        <li><a href="#contactos">Eres profesional</a></li>
+        
+    </ul>
+</header>
+
+<!-- Overlay para detección de clics fuera del menú -->
+<div class="overlay" onclick="closeMenu()"></div>
+
+<!-- ////////////////////////////////////SECCION DEL LOGO, ANIMACION DEL LOGO Y TARJETA DE CONTACTO 1/////////////////////////////////// -->
+<section class="home">
+    <div class="logo_container">
+        <img src="Image/geekschile.png" alt="Logo Geek's Chile" class="center_Logo">
+        <p class="maquina_escribir"><span id="texto"></span></p>
+    </div>
+    <!--TARJETA DE CONTACTO-->
+    <div class="tarjeta_Home">
+        <div class="lado izquierda">
+            <p>¿Eres <span class="resaltado">EMPRESA</span> y necesitas orientación sobre los servicios y sus detalles?</p>
+            <button class="boton">Haz click aquí</button>
+        </div>
+        <div class="lado derecha">
+            <p>¿Eres <span class="resaltado">PROFESIONAL</span> y necesitas información sobre los cargos disponibles?</p>
+            <button class="boton">Haz click aquí</button>
+        </div>
+    </div>
+</section>
+
+    <!-- ////////////////////////////////////Imagen de descanso 1 ////////////////////////////////////-->
+    <section class="descanso">
+        <img src="Image/img de descanso 1.jpg" alt="Imagen con paisaje relajante" class="img_descanso">
+    </section>
+
+
+    <!--//////////////////////////////////// ////////////////////////////////////-->
+    <section>
+
+    </section>
+
+    <!--////////////////////////////////////IMAGEN DE DESCANSO 2////////////////////////////////////-->
+    <section>
+        <img src="Image/imagen de descanso 2.png" alt="Imagen con paisaje relajante" class="img_descanso">
+    </section>
+
+    <!--////////////////////////////////////NOSOTROS////////////////////////////////////-->
+    <section id="nosotros">
+        <iframe src="HTML/Nosotros.html"></iframe>
+    </section>
+
+    <!--////////////////////////////////////IMAGEN DE DESCANSO 3////////////////////////////////////-->
+    <section>
+        <img src="Image/Imagen de descanso 3.png" alt="Imagen con paisaje relajante" class="img_descanso">
+    </section>
+
+    <!--////////////////////////////////////TARJETA DE CONTACTOS////////////////////////////////////-->
+    <section id="contactos">
+        <iframe src="HTML/contactos.html"></iframe>
+    </section>
+
+    <!--//////////////////////////////////// FOOTER ////////////////////////////////////-->
+    <footer class="footer">
+        <div class="footer_container">
+            <!-- Logo -->
+            <img src="Image/geeksChile.png" alt="Logo de Geek's Chile" class="logo_footer">
+            
+            <!-- Información general -->
+            <div class="footer_text">
+                <div class="geeks_chile">
+                    <h2>GEEK’S CHILE</h2>
+                    <p>Reclutamiento y selección de profesionales en Latinoamérica</p>
+                    <p>El talento que buscas, lo encontramos</p>
+                </div>
+                
+                <!-- Contacto -->
+                <div class="contacto">
+                    <h2>Contacto</h2>
+                    <p>Santiago, Chile</p>
+                    <p>
+                        <img src="Image/whatsApp.png" alt="WhatsApp"> Información para 
+                        <a href="#" class="highlight">EMPRESAS</a>
+                    </p>
+                    <p>
+                        <img src="Image/whatsApp.png" alt="WhatsApp"> Información para 
+                        <a href="#" class="highlight">PROFESIONALES</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!--////////////////////////////////////SCRIPT////////////////////////////////////-->
+    <script src="JS/bar_menu.js"></script>
+    <script src="JS/home.js"></script>
+
 </body>
 </html>

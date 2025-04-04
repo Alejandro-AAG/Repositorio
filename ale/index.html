@@ -3,16 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cómo lo hacemos</title>
+    <title>Geek's Chile - Reclutamiento</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./CSS/style.css">
-
+    <link rel="stylesheet" href="CSS/style.css">
+    
 </head>
 <body>
-    <ul>
-        <li><a href="index.html">Inicio</a></li>
+    <header>
+        <img src="Image/logo Geek's.png" alt="Logo Geek's Chile" class="logo"> 
+        <nav>
+            <ul>
+                <li><a href="#inicio" id="btn-que-hacemos">Qué hacemos</a></li>
+                <li><a href="como_lo_hacemos.html">Cómo lo hacemos</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#empresa">Eres empresa</a></li>
+                <li><a href="#profesional">Eres profesional</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    <section id="inicio">
+        <h1>Reclutamiento y selección de profesionales en Latinoamérica</h1>
+        <p>Los profesionales que buscas - encuéntralos con nosotros de manera <strong>ÁGIL</strong> y <strong>EFICIENTE</strong></p>
+        <div class="bubble-container" id="bubble-container">
+            <!-- Burbujas generadas dinámicamente en JavaScript -->
+        </div>
+    </section>
 
-    </ul>
+    <!-- Scripts cargados al final del body -->
+    <script src="JS/script.js"></script>
+  
     <section class="como-lo-hacemos">
         <h2>Contrata profesionales en toda Latinoamérica</h2>
         <p>Encuentra profesionales que se ajusten a la cultura de tu organización y con las capacidades técnicas y relacionales que necesitas.</p>
@@ -42,6 +62,7 @@
         <div class="info-adicional"></div>
     </section>
 
-    <script src="./JS/como_lo_hacemos.js"></script>
+
+    
 </body>
 </html>

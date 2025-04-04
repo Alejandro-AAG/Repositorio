@@ -1,0 +1,256 @@
+/*Reset de Estilos Básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo general de la página */
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Ocupa toda la pantalla */
+    font-family: Arial, sans-serif;
+    background-color: transparent;
+    justify-content: space-between;
+    overflow: hidden; /* Elimina las barras de desplazamiento */
+}
+
+/* Contenedor principal que ocupa la mayor parte de la pantalla */
+.container {
+    display: flex;
+    width: 100%;
+    height: 65.1vh; /* Proporción de 667px en una pantalla de 1024px */
+}
+
+/* Estilo de Tarjetas (Sección Izquierda, Derecha, Inferior) */
+.tarjeta {
+    flex: 1;
+    position: relative;
+    background: transparent;
+    border: 1px solid #ddd;
+    transition: box-shadow 0.3s ease, z-index 0.3s ease;
+}
+
+/* Efecto Hover en Tarjetas */
+.tarjeta:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+    z-index: 10; /* Elevar la tarjeta sobre las demás */
+}
+
+/* Tarjeta Inferior - ocupa menos espacio vertical */
+.tarjeta.inferior {
+    width: 100%;
+    height: 20.8vh; /* Proporción de 213px en una pantalla de 1024px */
+}
+
+/* Elipses */
+.tarjeta:hover .elipse {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Estilo de las Elipses - Elementos decorativos */
+.elipse {
+    opacity: 0;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: rgba(0, 213, 181, 0.1);
+    border-radius: 50%;
+    filter: blur(50px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform: scale(0.5);
+}
+
+/* Posiciones de las elipses */
+.izquierda .elipse1 {
+    top: -40px;
+    left: -40px;
+}
+
+.izquierda .elipse2 {
+    bottom: -40px;
+    right: -40px;
+}
+
+.derecha .elipse1 {
+    top: -40px;
+    right: -40px;
+}
+
+.derecha .elipse2 {
+    bottom: -40px;
+    left: -40px;
+}
+
+.inferior .elipse1 {
+    bottom: -40px;
+    left: -40px;
+}
+
+.inferior .elipse2 {
+    bottom: -40px;
+    right: -40px;
+}
+
+
+/* Estilo de Texto dentro de Tarjetas */
+
+.tarjeta.izquierda .texto {
+    position: absolute;
+    top: 12.7vh; /* Ubicación vertical exacta (130px en 1024px de alto) */
+    left: 50%; /* Centrado horizontalmente */
+    transform: translateX(-50%); /* Ajuste fino para centrar */
+    font-family: "Lato", sans-serif;
+    font-weight: 500; /* Medium */
+    font-size: 2.17vw; /* 31.25px en una pantalla de 1440px */
+    text-align: center;
+    width: 75%; /* Ajusta el ancho para que el texto se distribuya en 3 líneas */
+    line-height: 1.4; /* Espaciado correcto entre líneas */
+    min-height: 4.2em; /* Asegura suficiente espacio para 3 líneas */
+    white-space: normal; /* Permite el salto de línea automático */
+}
+
+.tarjeta.izquierda:hover .texto {
+    font-weight: 700; /* Bold al hacer hover */
+}
+
+.tarjeta.derecha .texto {
+    position: absolute;
+    top: 12.7vh; /* Ubicación vertical exacta (130px en 1024px de alto) */
+    left: 50%; /* Centrado horizontalmente */
+    transform: translateX(-50%); /* Ajuste fino para centrar */
+    font-family: "Lato", sans-serif;
+    font-weight: 500; /* Medium */
+    font-size: 2.17vw; /* 31.25px en una pantalla de 1440px */
+    text-align: center;
+    width: 80%; /* Mantiene la distribución en 3 líneas */
+    line-height: 1.4; /* Espaciado correcto entre líneas */
+    min-height: 4.2em; /* Evita cambios de altura al hacer hover */
+    white-space: pre-line; /* Permite que los saltos de línea se mantengan */
+}
+
+.tarjeta.derecha:hover .texto {
+    font-weight: 700; /* Bold al hacer hover */
+}
+
+.tarjeta.inferior .texto {
+    position: absolute;
+    top: 1.95vh; /* Ubicación exacta (20px en 1024px de alto) */
+    left: 50%; /* Centrado horizontalmente */
+    transform: translateX(-50%); /* Ajuste fino para centrar */
+    font-family: "Lato", sans-serif;
+    font-weight: 500; /* Medium */
+    font-size: 2.17vw; /* 31.25px en una pantalla de 1440px */
+    text-align: center;
+    width: 80%; /* Mantiene el ancho para correcta distribución */
+    line-height: 1.4; /* Espaciado adecuado entre líneas */
+    min-height: 4.2em; /* Evita cambios de altura en hover */
+    white-space: pre-line; /* Permite mantener los saltos de línea */
+}
+
+.tarjeta.inferior:hover .texto {
+    font-weight: 700; /* Cambia a Bold en hover */
+}
+
+.boton {
+    position: absolute; /* Posición fija dentro de su contenedor */
+    top: calc(446 / 1024 * 100vh); /* Ajusta dinámicamente la altura basada en el viewport */
+    left: 50%; /* Centra el botón horizontalmente */
+    transform: translateX(-50%); /* Asegura el centrado exacto */
+    width: 150px;
+    height: 40px;
+    border: 2px solid #004d40; /* Color del borde */
+    color: #004d40; /* Color del texto */
+    background-color: transparent; /* Fondo transparente */
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 40px; /* Centra el texto dentro del botón */
+    text-decoration: none; /* Elimina subrayado */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: all 0.3s ease; /* Transición suave */
+    z-index: 5; /* Asegura que el botón esté sobre otros elementos */
+}
+
+.tarjeta:hover .boton {
+    transform: translateX(-50%) scale(1.1); 
+}
+
+.boton:hover {
+    background-color: #004d40; 
+    color: #ffffff; 
+}
+
+.img_email {
+    position: absolute;
+    top: 50%; /* Centrado verticalmente en el contenedor */
+    left: 50%; /* Centrado horizontalmente */
+    transform: translate(-50%, -50%); /* Asegura el centrado exacto */
+    width: calc(70 / 1440 * 100vw); /* Tamaño inicial de ancho (70px) */
+    height: auto; /* La altura se ajusta automáticamente para mantener la proporción */
+    transition: top 0.3s ease, width 0.3s ease, height 0.3s ease; /* Transición suave */
+}
+
+.tarjeta.inferior:hover .img_email {
+    top: 50%; /* Mantiene el centrado al hacer hover */
+    width: calc(100 / 1440 * 100vw); /* Tamaño más grande en hover (100px) */
+    height: auto; /* La altura se ajusta automáticamente para mantener la proporción */
+}
+
+
+.center_Logo {
+    position: absolute;
+    top: 25.6vh; /* Ubicado a 262px en una pantalla de 1024px de alto */
+    left: 50%; /* Centrado horizontalmente */
+    transform: translateX(-50%); /* Ajuste fino para centrarlo exactamente */
+    width: 22.7vw; /* Mantiene la proporción basada en 328px de ancho en 1440px */
+    height: auto; /* Para mantener la proporción */
+    z-index: 15; /* Asegura que quede sobre las tarjetas */
+}
+
+/* MEDIA QUERY PARA PANTALLAS DE CELULAR */
+@media screen and (max-width: 768px) {
+
+    /* Aumentar el tamaño de los textos dentro de las tarjetas */
+    .tarjeta .texto {
+        font-size: 4vw; /* Aumenta el tamaño del texto a un 4% del ancho de la pantalla */
+    }
+
+    /* Si hay más párrafos u otros textos, puedes aplicar un estilo similar */
+    p {
+        font-size: 4vw; /* Ajusta el tamaño del texto de los párrafos */
+    }
+
+    /* Puedes ajustar otras propiedades de las tarjetas si es necesario */
+    .tarjeta.izquierda .texto,
+    .tarjeta.derecha .texto,
+    .tarjeta.inferior .texto {
+        font-size: 4vw; /* Aumenta el tamaño de todos los textos dentro de las tarjetas */
+    }
+
+    /* Si tienes más ajustes específicos, como márgenes o espaciado, también puedes modificarlos aquí */
+    .tarjeta .texto {
+        line-height: 1.6; /* Aumenta el espaciado entre líneas para que no se vean tan apretados */
+    }
+
+    /* Ajuste del tamaño de las elipses si es necesario */
+    .elipse {
+        width: 100px; /* Reducir el tamaño de las elipses para que no sean tan grandes */
+        height: 100px;
+    }
+
+    /* Aumentar el tamaño del ícono de email (el doble del tamaño anterior) */
+    .img_email {
+        width: calc(200 / 1440 * 100vw); /* Ajusta el tamaño del ícono al doble, es decir, 200px en pantallas pequeñas */
+        height: auto; /* Mantiene la proporción */
+    }
+
+    /* Mantener el cambio de tamaño en el hover */
+    .tarjeta.inferior:hover .img_email {
+        width: calc(240 / 1440 * 100vw); /* Incrementa aún más el tamaño en hover (240px) */
+    }
+}
+
