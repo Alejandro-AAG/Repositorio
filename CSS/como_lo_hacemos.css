@@ -1,0 +1,217 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 20px; /* o el valor que necesites */
+    box-sizing: border-box;
+}
+
+/* Definir el tamaño de la tarjeta según el tamaño de la ventana */
+.tarjeta {
+    width: 13vw; /* El tamaño de la tarjeta será el 13% del ancho de la ventana */
+    min-width: 200px; /* Un ancho mínimo para evitar que las tarjetas se hagan demasiado pequeñas */
+    aspect-ratio: 1 / 1; /* Cuadrada */
+    background-color: var(--color-tarjeta);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2.5rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    margin: 10px; /* Espaciado entre las tarjetas */
+    flex-shrink: 0; /* Evita que las tarjetas se encojan */
+}
+
+/* Texto del paso */
+.textopasos {
+    position: absolute;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-width: 1px;
+    background-color: #E7FCF9;
+    border-style: outset;
+    border-color: black;
+    border-radius: 8px;
+    top: 10px;
+    font-size: 1rem; /* Aumentado el tamaño del texto */
+    font-weight: bold;
+    z-index: 3;
+}
+
+/* Elipse difuminada */
+.elipse {
+    position: absolute;
+    width: 208px;
+    height: 196px;
+    background-color: var(--color-elipse);
+    border-radius: 50%;
+    filter: blur(60px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+/* Segunda elipse */
+.elipse-2 {
+    position: absolute;
+    width: 208px;
+    height: 196px;
+    background-color: var(--color-elipse);
+    border-radius: 50%;
+    filter: blur(60px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    transition: all 0.3s ease;
+    opacity: 0; /* Inicialmente invisible */
+}
+
+/* Imagen centrada */
+.imagen {
+    width: 80%;
+    height: 87%;
+    object-fit: contain;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+/* Título debajo */
+.titulo-tarjeta {
+    font-size: 1rem; /* Aumentado el tamaño del título */
+    margin-top: 10px;
+    z-index: 2;
+    transition: font-size 0.3s ease;
+}
+
+/* Descripción oculta por defecto */
+.descripcion {
+    display: none;
+    font-size: 1rem; /* Aumentado el tamaño de la descripción */
+    margin-top: 10px;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+/* Sin hover, ambas elipses están centradas */
+.tarjeta .elipse, .tarjeta .elipse-2 {
+    transform: translate(-50%, -50%);
+}
+
+/* Hover - Cambiar el tamaño de las elipses a la mitad y reducir el blur */
+.tarjeta:hover .elipse,
+.tarjeta:hover .elipse-2 {
+    width: 104px;  /* La mitad del tamaño original */
+    height: 98px;  /* La mitad del tamaño original */
+    filter: blur(30px); /* Reducir el blur a la mitad */
+}
+
+/* Hover - Cambiar el tamaño de la imagen */
+.tarjeta:hover .imagen {
+    width: 60%;
+    height: auto;
+}
+
+/* Animación al hacer hover */
+.tarjeta:hover .textopasos,
+.tarjeta:hover .titulo-tarjeta {
+    font-size: 1.1rem;
+}
+
+/* Subrayado y bold en el título cuando está en hover */
+.tarjeta:hover .titulo-tarjeta {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.tarjeta:hover {
+    aspect-ratio: auto; /* Se adapta a la altura de la descripción */
+    padding-bottom: 2rem;
+}
+
+.tarjeta:hover .descripcion {
+    display: block;
+}
+
+/* Clases para mover las elipses a las diferentes posiciones */
+
+/* Elipse 1 - Se mueve a la esquina superior izquierda */
+.tarjeta:hover .elipse-1 {
+    top: 0%;
+    left: 0%;
+    transform: translate(0, 0);
+    width: 180px; /* Se reduce el tamaño */
+    height: 170px; /* Se reduce el tamaño */
+    opacity: 0.8; /* Se reduce la opacidad */
+}
+
+/* Elipse 2 - Se mueve a la esquina inferior derecha y se hace visible */
+.tarjeta:hover .elipse-2 {
+    top: 100%;
+    left: 100%;
+    transform: translate(-100%, -100%);
+    opacity: 0.6; /* Se hace más transparente */
+    width: 180px; /* Se reduce el tamaño */
+    height: 170px; /* Se reduce el tamaño */
+}
+
+/* Nueva clases de posición para las elipses */
+
+/* Elipse centrada */
+.elipse-centrada {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Elipse en la esquina superior izquierda */
+.elipse-top-left {
+    top: 0%;
+    left: 0%;
+    transform: translate(0, 0);
+}
+
+/* Elipse en la esquina superior derecha */
+.elipse-top-right {
+    top: 0%;
+    right: 0%;
+    transform: translate(0, 0);
+}
+
+/* Elipse en el centro superior */
+.elipse-top-center {
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Elipse en la esquina inferior izquierda */
+.elipse-bottom-left {
+    bottom: 0%;
+    left: 0%;
+    transform: translate(0, 0);
+}
+
+/* Elipse en la esquina inferior derecha */
+.elipse-bottom-right {
+    bottom: 0%;
+    right: 0%;
+    transform: translate(0, 0);
+}
+
+/* Elipse en el centro inferior */
+.elipse-bottom-center {
+    bottom: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+}

@@ -20,6 +20,11 @@
     min-height: 500px; 
 }
 
+.nosotros h2, .nosotros p {
+    text-align: center; /* Centra el texto de los h2 y p */
+}
+
+
 /*Caracteristicas de la burbuja*/
 .burbuja {
     display: inline-block;
