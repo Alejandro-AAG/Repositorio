@@ -39,8 +39,8 @@
     <!-- Menú de navegación -->
     <ul>
         <span class="close-btn" onclick="closeMenu()">&#10005;</span>
-        <li><a href="#">Qué hacemos</a></li>
-        <li><a href="#">Cómo lo hacemos</a></li>
+        <li><a href="#que-hacemos">Qué hacemos</a></li>
+        <li><a href="#como-lo-hacemos">Cómo lo hacemos</a></li>
         <li><a href="#nosotros">Nosotros</a></li>
         <li><a href="#contactos">Eres empresa</a></li>
         <li><a href="#contactos">Eres profesional</a></li>
@@ -61,11 +61,17 @@
     <div class="tarjeta_Home">
         <div class="lado izquierda">
             <p>¿Eres <span class="resaltado">EMPRESA</span> y necesitas orientación sobre los servicios y sus detalles?</p>
-            <button class="boton">Haz click aquí</button>
+            <a href="https://api.whatsapp.com/send?phone=+56983909771&text=Hola,%20Soy%20EMPRESA,%20necesito%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20servicios%20disponibles!" target="_blank">
+                <button class="boton">Haz click aquí</button>
+            </a> 
+
         </div>
         <div class="lado derecha">
             <p>¿Eres <span class="resaltado">PROFESIONAL</span> y necesitas información sobre los cargos disponibles?</p>
-            <button class="boton">Haz click aquí</button>
+            <a href="https://api.whatsapp.com/send?phone=+56983909771&text=Hola,%20Soy%20PROFESIONAL,%20necesito%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20cargos%20disponibles!" target="_blank"> 
+                <button class="boton">Haz click aquí</button>
+            </a>
+            
         </div>
     </div>
 </section>
@@ -86,7 +92,7 @@
     </section>
 
     <!--//////////////////////////////////// COMO LO HACEMOS////////////////////////////////////-->
-    <section class="como-lo-hacemos">
+    <section class="como-lo-hacemos" id="como-lo-hacemos">
         <h2>Contrata profesionales en toda Latinoamérica</h2>
         <p>Encuentra profesionales que se ajusten a la cultura de tu organización y con las capacidades técnicas y relacionales que necesitas.</p>
 
@@ -135,16 +141,19 @@
                     <p>Santiago, Chile</p>
                     <p>
                         <img src="Image/whatsApp.png" alt="WhatsApp"> Información para 
-                        <a href="#" class="highlight">EMPRESAS</a>
+                        <a href="https://api.whatsapp.com/send?phone=+56983909771&text=Hola,%20Soy%20EMPRESA,%20necesito%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20servicios%20disponibles!" 
+                        class="highlight" target="_blank">EMPRESAS</a>
                     </p>
                     <p>
                         <img src="Image/whatsApp.png" alt="WhatsApp"> Información para 
-                        <a href="#" class="highlight">PROFESIONALES</a>
+                        <a href="https://api.whatsapp.com/send?phone=+56983909771&text=Hola,%20Soy%20PROFESIONAL,%20necesito%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20cargos%20disponibles!" 
+                        class="highlight" target="_blank">PROFESIONALES</a>
                     </p>
                 </div>
             </div>
         </div>
     </footer>
+    
     
     <!--////////////////////////////////////SCRIPT////////////////////////////////////-->
     <script src="JS/bar_menu.js"></script>
