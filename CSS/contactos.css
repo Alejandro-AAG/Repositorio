@@ -200,7 +200,6 @@ body {
     height: auto; /* La altura se ajusta automáticamente para mantener la proporción */
 }
 
-
 .center_Logo {
     position: absolute;
     top: 25.6vh; /* Ubicado a 262px en una pantalla de 1024px de alto */
