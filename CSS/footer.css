@@ -134,5 +134,38 @@
     }
 }
 
+/* Media query para iPad Air, iPad Pro, Surface Pro 7 y Asus ZenBook Fold en portrait */
+@media screen and (max-width: 1200px) and (orientation: portrait) {
+    /* Ajustamos el logo para que no se vea grande y alargado en pantallas grandes pero en orientación vertical */
+    .logo_footer {
+        width: 25vw; /* Ajusta el logo a un porcentaje del ancho de la pantalla */
+        max-width: 200px; /* Establece un máximo para que no se agrande demasiado */
+        height: auto; /* Mantiene la proporción */
+        padding: 5px;
+        align-self: center; /* Centra el logo en el contenedor */
+        margin-bottom: 20px;
+    }
 
+    /* Aseguramos que el contenedor del footer esté bien distribuido */
+    .footer_container {
+        flex-direction: column;
+        align-items: center; /* Centra el contenido horizontalmente */
+        text-align: center; /* Centra el texto */
+        justify-content: center; /* Centra el contenido verticalmente si es necesario */
+    }
 
+    .footer_text {
+        flex-direction: column;
+        align-items: center; /* Centra los textos */
+        gap: 15px;
+    }
+
+    /* Ajustamos el tamaño de los textos del footer */
+    .geeks_chile p, .contacto p {
+        font-size: 14px; /* Reducimos el tamaño de la fuente para pantallas más grandes en vertical */
+    }
+
+    .geeks_chile h2, .contacto h2 {
+        font-size: 18px; /* Ajusta el tamaño de los títulos */
+    }
+}
