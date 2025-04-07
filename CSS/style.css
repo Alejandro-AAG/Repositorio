@@ -41,13 +41,13 @@
 }
 
 
-.como-lo-hacemos h2 {
+.titulo2 {
     font-size: 2.5rem; /* Tamaño grande para el título */
     font-weight: bold;
     margin-bottom: 15px;
 }
 
-.como-lo-hacemos p {
+.parrafo {
     font-size: 1.2rem;
     margin-bottom: 20px;
 }
