@@ -197,4 +197,52 @@ body {
     }
 }
 
-/*MP*/
+/* Media Query combinada para dispositivos con pantalla de máximo 500px de altura y entre 600px y 768px de ancho en landscape */
+@media screen and (max-height: 500px) and (min-width: 600px) and (orientation: landscape), 
+       screen and (max-width: 568px) and (orientation: landscape), /* iPhone SE en landscape */
+       screen and (max-width: 768px) and (min-width: 360px) and (orientation: landscape) { /* Samsung S8+ en landscape */
+
+    section.que-hacemos {
+        padding: 0; /* Elimina el padding en dispositivos pequeños */
+        overflow-y: auto; /* Permite scroll controlado si es necesario */
+        max-height: 100vh;
+    }
+
+    .que-hacemos {
+        height: auto; /* Ajusta dinámicamente la altura */
+        min-height: 100vh; /* Mantén la altura mínima */
+        overflow-y: hidden; /* Elimina cualquier scroll vertical */
+    }
+ /* Ajustes en los contenedores de burbujas para evitar scroll interno */
+ .contenedor1-burbujas, .contenedor2-burbujas, .contenedor3-burbujas, .contenedor4-burbujas, .contenedor5-burbujas {
+    background-color: transparent;
+    padding-block: min(2.5vh, 30px); /* Espaciado adaptable */
+    overflow: hidden; /* Evita desplazamiento dentro del contenedor */
+    user-select: none;
+    display: flex;
+    gap: min(4vw, 20px); /* Espaciado adaptable */
+    width: 100%;
+}
+
+/* Ajustes de espaciado entre los títulos y párrafos */
+.que-hacemos h2, .que-hacemos p {
+    margin: 0; /* Elimina márgenes extra */
+    padding: 0; /* Elimina padding extra */
+}
+
+.que-hacemos h2 {
+    margin-bottom: 10px; /* Ajusta el espaciado entre el título y el párrafo */
+}
+
+.que-hacemos p {
+    margin-top: 5px; /* Ajusta el espaciado entre el párrafo y el siguiente elemento */
+}
+
+/* Aumenta el tamaño de las burbujas para dispositivos pequeños */
+.burbuja {
+    font-size: min(4vw, 14px); /* Aumenta el tamaño de la fuente */
+    line-height: min(5vh, 45px); /* Aumenta la altura de las burbujas */
+    padding: 0px 2vw; /* Mantén el padding mayor */
+}
+}
+
