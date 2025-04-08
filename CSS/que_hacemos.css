@@ -1,0 +1,200 @@
+/*En esta seccion modificas los colores o agregas colores*/
+:root {
+    --color1: #ECD2FF;
+    --color2: #FEEDA8;
+    --color3: #EBEBEB;
+    --color4: #ABF9A9;
+    --color5: #C0C2EF;
+    --color6: #F9DCC9;
+    --color7: #CEAFFE;
+}
+/* Estilo para los títulos (h2) */
+h2 {
+    font-family: 'Lato', sans-serif; /* Aplica la fuente Lato */
+    font-size: 40px; /* Tamaño de letra */
+    text-align: center; /* Centra el texto */
+    margin-bottom: 20px; /* Espaciado inferior opcional */
+}
+
+/* Estilo para los subtítulos (p) */
+p {
+    font-family: 'Lato', sans-serif; /* Aplica la fuente Lato */
+    font-size: 20px; /* Tamaño de letra */
+    text-align: center; /* Centra el texto */
+    margin-bottom: 20px; /* Espaciado inferior opcional */
+}
+/* Fondo degradado para toda la página */
+body {
+
+    margin: 0; /* Elimina márgenes predeterminados */
+    padding: 0; /* Elimina relleno predeterminado */
+    font-family: 'Lato', sans-serif; /* Asegúrate de usar la fuente Lato */
+}
+/*configuracion del selection nosotros*/
+.nosotros {
+    background-color: transparent; 
+    overflow-y: hidden; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    min-height: 500px; 
+}
+
+/*Caracteristicas de la burbuja*/
+.burbuja {
+    display: inline-block;
+    padding: 0px 2vw; /* Espaciado adaptable */
+    font-size: min(2vw, 16px); /* Escala con la pantalla, máximo 16px */
+    line-height: min(5vh, 50px); /* Escala con la altura de la pantalla, máximo 50px */
+    border-radius: 50px;
+    white-space: nowrap;
+    color: #000;
+    text-align: center;
+    margin: 0 min(1vw, 10px); /* Espaciado adaptable */
+    font-family: 'Lato', sans-serif;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Aplicar colores a las burbujas tambien puedes agregar otro color si esta en la seccion root */
+.burbuja-color1 { background-color: var(--color1); }
+.burbuja-color2 { background-color: var(--color2); }
+.burbuja-color3 { background-color: var(--color3); }
+.burbuja-color4 { background-color: var(--color4); }
+.burbuja-color5 { background-color: var(--color5); }
+.burbuja-color6 { background-color: var(--color6); }
+.burbuja-color7 { background-color: var(--color7); }
+
+/* Contenedores de burbujas */
+.contenedor1-burbujas, .contenedor2-burbujas, .contenedor3-burbujas, .contenedor4-burbujas, .contenedor5-burbujas {
+    background-color: transparent; 
+    padding-block: min(2.5vh, 30px); /* Se adapta a la pantalla */
+    overflow: hidden;
+    user-select: none;
+    display: flex;
+    gap: min(4vw, 20px); /* Espaciado adaptable */
+    width: 100%;
+}
+
+/* Eliminar lista de estilos predeterminados */
+.contenedor1-burbujas ul,
+.contenedor2-burbujas ul,
+.contenedor3-burbujas ul,
+.contenedor4-burbujas ul,
+.contenedor5-burbujas ul {
+    list-style: none;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: min(3vw, 20px); /* Reduce el espaciado en pantallas pequeñas */
+    margin: 0;
+    padding: 0;
+    width: max-content;
+}
+
+/* Animaciones de desplazamiento derecha a izquierda*/
+@keyframes scrollLeft {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-100% / 2)); }
+}
+
+/*animacin de desplazamiento izquierda a derecha*/
+@keyframes scroll-reverse {
+    from { transform: translateX(calc(-50% - 4vw)); }
+    to { transform: translateX(0); }
+}
+
+/* Animaciones de desplazamiento derecha a izquierda*/
+@keyframes scrollLeft3 {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-100% / 2)); }
+}
+
+/*animacin de desplazamiento izquierda a derecha*/
+@keyframes scroll4-reverse {
+    from { transform: translateX(calc(-50% - 4vw)); }
+    to { transform: translateX(0); }
+}
+
+/* Animaciones de desplazamiento derecha a izquierda*/
+@keyframes scrollLeft5 {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-100% / 2)); }
+}
+
+/* Asignar animaciones a cada contenedor de burbujas */
+.contenedor1-burbujas ul { animation: scrollLeft 30s linear infinite; }
+.contenedor2-burbujas ul { animation: scroll-reverse 30s linear infinite; }
+.contenedor3-burbujas ul { animation: scrollLeft3 30s linear infinite; }
+.contenedor4-burbujas ul { animation: scroll4-reverse 30s linear infinite; }
+.contenedor5-burbujas ul { animation: scrollLeft3 30s linear infinite; }
+
+/* Ajustes responsivos avanzados */
+@media (max-width: 1024px) {
+    .burbuja {
+        font-size: min(1.8vw, 14px);
+        line-height: min(4.5vh, 40px);
+    }
+}
+
+@media (max-width: 767px) {
+    .burbuja {
+        font-size: min(3vw, 12px);
+        line-height: min(4vh, 30px);
+        padding: 0px 1.5vw;
+    }
+}
+
+
+/* Pantallas grandes (PC de escritorio) */
+@media (min-width: 1200px) {
+    .burbuja {
+        font-size: min(1.5vw, 20px);
+        line-height: min(6vh, 60px);
+    }
+}
+
+/* Tablets grandes (entre 768px y 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .burbuja {
+        font-size: min(2vw, 16px);
+        line-height: min(5vh, 50px);
+        padding: 0px 2vw;
+    }
+}
+
+/* Tablets pequeñas y celulares grandes (entre 480px y 767px) */
+@media (max-width: 767px) and (min-width: 480px) {
+    .burbuja {
+        font-size: min(3vw, 14px);
+        line-height: min(4.5vh, 40px);
+        padding: 0px 1.5vw;
+    }
+
+    h2 {
+        font-size: 28px; /* Reduce el tamaño del título */
+    }
+
+    p {
+        font-size: 18px; /* Reduce el tamaño del subtítulo */
+    }
+}
+
+/* Celulares pequeños (menos de 480px) */
+@media (max-width: 480px) {
+    .burbuja {
+        font-size: min(4vw, 12px);
+        line-height: min(4vh, 30px);
+        padding: 0px 1vw;
+    }
+
+    h2 {
+        font-size: 24px; /* Reduce aún más el tamaño del título */
+    }
+
+    p {
+        font-size: 16px; /* Reduce el tamaño del subtítulo */
+    }
+}
+
+/*MP*/
